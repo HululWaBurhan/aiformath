@@ -1,0 +1,61 @@
+Objective
+
+You are tasked with developing a static website maquette that simulates the real behavior of our AI-powered math collaboration platform using mock data and interactions. This maquette will serve as a prototype for design validation and user feedback before implementing the full solution.
+1. Development Requirements
+1.1. Scope
+
+    The maquette should be a fully static website (no backend, only frontend simulation).
+    It must simulate the key functionalities of the final platform using mock data and interactive UI components.
+    It should not require a login but must display a simulated authentication workflow.
+
+1.2. Features to Simulate
+
+    Collaborative Math Environment
+        Mathematical editor with LaTeX support.
+        Real-time editing simulation (show pre-filled examples and allow users to "edit").
+        Show user presence indicators (e.g., "Mohammed is typing...").
+
+    AI-Powered Autoformalization & Auto-informalization
+        User inputs natural language text, and the UI displays a simulated AI-generated formal proof (mocked response).
+        Reverse process: user inputs a Lean/Coq proof, and the UI shows a natural language explanation (predefined).
+
+    AI-assisted Proof Generation
+        A button for "Suggest Next Step" that reveals predefined proof steps (simulating AI assistance).
+        An option to "Auto-complete Proof", displaying a mocked final proof.
+
+    Crowdsourced Theorem-Proof Database
+        A browseable list of theorems with mock proof snippets.
+        Users can "upvote" or "comment" (with pre-filled mock interactions).
+
+    Theorem and Proof Visualization
+        A graph-based visualization showing connections between theorems.
+        Nodes representing theorems should be clickable, displaying mock proof details.
+
+2. Technical Specifications
+2.1. Tech Stack
+Component	Technology
+Frontend Framework	Next.js (React)
+Styling	TailwindCSS or Bootstrap
+Editor	MathJax/KaTeX for LaTeX rendering
+Mock Data Handling	JSON files, Faker.js
+Graph Visualization	D3.js or Cytoscape.js
+2.2. UI/UX Requirements
+
+    Minimalist and modern UI inspired by Jupyter Notebooks.
+    Split-screen layout: left for natural language input, right for formalized proof.
+    Dark/light mode toggle.
+    Animations for interactions (e.g., typing effect for AI responses).
+    Mobile-friendly design for browsing theorems.
+
+3. Deployment Instructions
+
+    The maquette must be deployed on GitHub Pages for easy sharing.
+    A custom domain (via CNAME) should be configured for access.
+    The codebase should be open-source and structured for easy future expansion.
+
+4. Deliverables
+
+    Fully functional static website maquette deployed online.
+    Source code repository with clean, documented code.
+    Mock dataset simulating theorem-proving scenarios.
+    User guide explaining available interactions.

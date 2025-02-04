@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathAI Collab - AI-Powered Mathematics Platform</title>
+    <meta name="description" content="AI-powered mathematics collaboration platform with LaTeX support and theorem visualization">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABClJREFUWEe9V11oHFUUPufObtIGUkJbH0RBfLD4A4r4oFB8qC/al0jnzm6pD0arRaX44oMP/qFY/KtFKgoVoVBRLO3O3bRQqIgQEX0UBYW+WCkUiqhQa0ECbXZ37hx5ZndmM5vdnUk22Q87sPfcc8/3nXPPPfcMwgoDEX0i8lcI7VgqZS8FgNbzqV8BaR+6RV+YagWEBUQMQJw/NCw7wvpBA0BEDwHiSZTyjRHxfiGqHUcpH0XEmYVAqJRr/w4gDQDoHoSU2t2qSYhPSSl3IOI/rfRmZtL/GEm9mbI4XlJqbyOtCYCIDiDiCynlcznnXh9RNyKuN42kG7sBwJq5HXqK8QLSQ2pmYr7YFADn3NuI8mMh5W2IWE0AEPGJkaMTR3WKPqowq5XHF+FuK0zbGzMrdkXJQWFn4G05IoMPZ7Mjv0cLhG3pMQDYTa8gHvY8b+Wcc29EpL2iZKqPiLYj0l2pJIQQP2itd1er1U8RMVgojzXtCa31l0KI3Yg4jYh9AD4tBIHjnHOnAODelHIf+r5/wxpz0HVdf6kARISkf0uYDKD8qZSaXU4A1tqtRPQlIm5GxGNCiEdyudxZIcRhRDyDiHuEEE+5rvtrGMBaIuqPM0IA+LxRf4QQMwsw4CHA+YVKKadYLN5ERIeJ6EUhxDoiOiOEeA0R3wkV4/2x1j4MAJ8g4ncAcFEp9UIc4MW4Kf1bIAnzjUEM7SBTNE3TvFQqlb7XWr8lhHiViE4g4l4p5U4A+AsA3kPEPQDQh4gfaK1fy+Vyf/q+f8p13QdaWwEA7wkhbhNCZLTWvwDAdgD4zhhzmIg4RHfEhMR88wyCIAkiV4BtHPziYyBeyvcB4hZE+kBKcS+CmPbr5ACX5lQC4GgYomsQeB0D1wDScQD6DRC2IOLGuEI2FTjnPieAFxFxSymVkrFKCPFVuVz+MJ/Pn+lWM0akdQUiugKJzoLvPQYA2xDg9jrGTTrdxEDkF7skz5j/RwNYa98AgOOI+BkiPi+EKHued9YY80QQBDc7pHWsBecbTgQgrbV7AdzkOE7JGJMlom+FEI8R0YVuQiL2yxYKhXVBELiIuA4RjwHAAUR8lIjq5bz7fSABsN1WSDiOs0EpxSW9sxD6T4NPJ1HKRxDxu3YaMAD9RwDpFGjveUR8EwBuJaLrSqkJRJwkos1CiMNCiF8B4CQA7EopOZQwT0Sx6VhjnI4AqPzYA1LuAOAPAOJxRLy/0bSiH4yxXyO9SUThCF2tEEE1lVLO/wLAzEwm8zci/oaIj6eU07q4ExHva0zdGNNLRDwQmQE7KISoOI7zXRAEmwCgbIw5BgDjAHABEXcR0ZZuANQnWJySANqjJ2uc2mI9/EHahAR4DsLDBEG63aIkeYt6mN4AO0V/AyiYo3MAsifXAAAAAElFTkSuQmCC">
+    <!-- KaTeX for LaTeX rendering -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <!-- Custom styles -->
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MathAI Collab</div>
+            <div class="nav-controls">
+                <button id="theme-toggle">🌓</button>
+                <button id="login-btn">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="split-screen">
+        <section class="editor-section">
+            <div class="editor-container">
+                <h2>Mathematical Statement</h2>
+                <div class="editor-wrapper">
+                    <div id="natural-editor" class="editor" contenteditable="true">
+                        Loading examples...
+                    </div>
+                    <div class="editor-overlay">
+                        Click to start editing
+                    </div>
+                </div>
+                <div class="typing-indicator hidden">Mohammed is typing...</div>
+                <div class="button-group">
+                    <button id="formalize-btn">Formalize</button>
+                    <button id="suggest-step-btn">Suggest Next Step</button>
+                    <button id="auto-complete-btn">Auto-complete Proof</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="proof-section">
+            <div class="proof-container">
+                <h2>Formal Proof</h2>
+                <div id="formal-proof" class="proof-display">
+                    The formalized proof will appear here...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="theorem-browser hidden">
+        <div class="theorem-header">
+            <h3>Theorem Database</h3>
+            <div class="online-users">
+                Online: <span class="user-badge">Mohammed</span> <span class="user-badge">Sarah</span> <span class="user-badge">John</span>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search theorems..." class="theorem-search">
+        </div>
+        <div id="theorem-list">
+            <!-- Populated by JavaScript -->
+        </div>
+    </aside>
+
+    <div id="graph-visualization" class="hidden">
+        <!-- D3.js visualization will be rendered here -->
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="mock-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
